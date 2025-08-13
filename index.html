@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <title>Laundry Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Weather App for the Laundry</h1>
+      <form id="search-form">
+        <input
+          type="search"
+          placeholder="Enter a city.."
+          id="search-form-input"
+          autocomplete="off"
+          required
+        />
+        <input type="submit" value="Search" />
+      </form>
+      <div>Did you hang them already? Today is Sunny day!</div>
+      <div id="city"></div>
+      <div id="icon"></div>
+      <div class="display-temperature">
+        <div id="temperature"></div>
+        <span>°C</span>
+      </div>
+      <div>Let's see next 5 days..</div>
+      <div>Mon</div>
+      <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+      <div>28°C</div>
+    </div>
+  </body>
+  <script src="src/index.js"></script>
+</html>
