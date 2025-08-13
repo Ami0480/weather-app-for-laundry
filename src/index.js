@@ -8,10 +8,32 @@ function showCityElement(response) {
   let iconElement = document.querySelector("#icon");
   let icon = response.data.weather[0].icon;
   let iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+  let dateElement = document.querySelector("#day");
+  let dt = response.data.dt;
+  let timezone = response.data.timezone;
+  let date = new Date((dt + timezone) * 1000);
 
   searchCity.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   iconElement.innerHTML = `<img src="${iconUrl}"/>`;
+  dateElement.innerHTML = formatDate(date);
+}
+
+function formatDate(date) {
+  let hour = date.getUTCHours();
+  let minute = date.getMinutes();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getUTCDay()];
+
+  return `${day} ${hour}:${minute}`;
 }
 
 function displayCity(city) {
