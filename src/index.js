@@ -84,7 +84,7 @@ function showForecastElement(response) {
     <div class="forecast-details">
      <div class="forecast-day">${day}</div>
      <img src="${iconUrl}" class="forecast-icon"/>
-     <div id="forecast-temp" class="forecast-temp">${temp}</div>
+     <div id="forecast-temp" class="forecast-temp">${temp}°C</div>
     </div>`;
   });
 }
