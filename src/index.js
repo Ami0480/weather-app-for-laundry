@@ -1,3 +1,15 @@
+let commentMap = {
+  "01d": "☀️ Perfect drying day!",
+  "02d": "🌞 Mostly sunny, still great for laundry",
+  "03d": "⛅ Partly cloudy but fine for drying",
+  "04d": "☁️ Drying might take longer",
+  "09d": "🌦️ Not ideal for laundry",
+  "10d": "🚫🌧️ Keep it inside",
+  "11d": "⛈️ Laundry can wait",
+  "13d": "❄️ Unless you want frozen socks",
+  "50d": "🌫️ Slow drying ahead",
+};
+
 function showCityElement(response) {
   console.log(response.data);
   let searchCity = document.querySelector("#city");
@@ -12,6 +24,18 @@ function showCityElement(response) {
   let dt = response.data.dt;
   let timezone = response.data.timezone;
   let date = new Date((dt + timezone) * 1000);
+  let descriptionElement = document.querySelector("#description");
+  let currentDescription = response.data.weather[0].icon;
+  let commentElement = document.querySelector("#comment");
+  let laundryComment = commentMap[currentDescription];
+
+  if (currentDescription.endsWith("d") && commentMap[currentDescription]) {
+    commentElement.innerHTML = laundryComment;
+    descriptionElement.innerHTML = response.data.weather[0].description;
+  } else {
+    commentElement.innerHTML = "Did you bring your laundry in?";
+    descriptionElement.innerHTML = "";
+  }
 
   searchCity.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);

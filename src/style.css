@@ -1,10 +1,25 @@
 .container {
   text-align: center;
+  margin: 60px;
+}
+.city {
+  font-size: 36px;
+}
+.current-comment {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.description {
+  text-transform: uppercase;
+  margin: 2px 3px 0 0;
 }
 .display-temperature {
   display: flex;
   justify-content: center;
 }
+
 .forecast-info {
   margin-top: 20px;
 }
@@ -12,13 +27,13 @@
 .forecast {
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
+  margin: 20px 60px;
 }
 .forecast-details {
   display: flex;
   flex-direction: column;
 }
 .forecast-icon {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
 }
