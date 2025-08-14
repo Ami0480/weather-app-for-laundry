@@ -10,6 +10,18 @@ let commentMap = {
   "50d": "🌫️ Slow drying ahead",
 };
 
+let imageMap = {
+  "01d": "images/sunny.png",
+  "02d": "images/sunny.png",
+  "03d": "images/clouds.png",
+  "04d": "images/clouds.png",
+  "09d": "images/lightrain.png",
+  "10d": "images/rain.png",
+  "11d": "images/rain.png",
+  "13d": "images/rain.png",
+  "50d": "images/mist.png",
+};
+
 function showCityElement(response) {
   console.log(response.data);
   let searchCity = document.querySelector("#city");
@@ -28,6 +40,8 @@ function showCityElement(response) {
   let currentDescription = response.data.weather[0].icon;
   let commentElement = document.querySelector("#comment");
   let laundryComment = commentMap[currentDescription];
+  let imageElement = document.querySelector("#image");
+  let laundryImage = imageMap[currentDescription];
 
   if (currentDescription.endsWith("d") && commentMap[currentDescription]) {
     commentElement.innerHTML = laundryComment;
@@ -35,6 +49,11 @@ function showCityElement(response) {
   } else {
     commentElement.innerHTML = "Did you bring your laundry in?";
     descriptionElement.innerHTML = "";
+  }
+  if (currentDescription.endsWith("d") && imageMap[currentDescription]) {
+    imageElement.innerHTML = `<img src="${laundryImage}" alt="Laundry weather"/>`;
+  } else {
+    imageElement.innerHTML = `<img src="images/night.png" alt="Laundry night" />`;
   }
 
   searchCity.innerHTML = response.data.name;

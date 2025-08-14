@@ -20,18 +20,26 @@
         />
         <input type="submit" value="Search" />
       </form>
-      <div class="current-comment">
-        <span class="description" id="description"></span>
-        <div class="comment" id="comment"></div>
+
+      <div class="current-weather-element">
+        <div>
+          <div id="city" class="city"></div>
+          <div id="day"></div>
+          <div id="icon"></div>
+          <div class="display-temperature">
+            <div id="temperature"></div>
+            <span>°C</span>
+          </div>
+        </div>
+        <div>
+          <div class="current-comment">
+            <span class="description" id="description"></span>
+            <div class="comment" id="comment"></div>
+          </div>
+          <div id="image" class="image"></div>
+        </div>
       </div>
 
-      <div id="city" class="city"></div>
-      <div id="day"></div>
-      <div id="icon"></div>
-      <div class="display-temperature">
-        <div id="temperature"></div>
-        <span>°C</span>
-      </div>
       <div class="forecast-info">
         <div>Let's see next 5 days..</div>
         <div id="forecast" class="forecast">

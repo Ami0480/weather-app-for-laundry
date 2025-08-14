@@ -2,15 +2,22 @@
   text-align: center;
   margin: 60px;
 }
+.current-weather-element {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 80px;
+}
 .city {
   font-size: 36px;
 }
 .current-comment {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
 }
-
+#image img {
+  width: 200px;
+  height: auto;
+}
 .description {
   text-transform: uppercase;
   margin: 2px 3px 0 0;
