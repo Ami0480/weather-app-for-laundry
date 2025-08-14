@@ -55,7 +55,7 @@ function showForecastElement(response) {
   forecastElement.innerHTML = "";
 
   dailyForecast.forEach((forecast) => {
-    let temp = forecast.main.temp;
+    let temp = Math.round(forecast.main.temp);
     let date = new Date(forecast.dt * 1000);
     let day = date.toLocaleDateString("en-Au", { weekday: "short" });
     let icon = forecast.weather[0].icon;
